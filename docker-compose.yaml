@@ -4,9 +4,9 @@ services:
         restart: always
         environment:
             MYSQL_DATABASE: ${MYSQL_DB:-app}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD:-!ChangeMe!}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD:-123123}
             MYSQL_USER: ${MYSQL_USER:-app}
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-!ChangeRootMe!}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-Root}
         ports:
             - "3306:3306"
         volumes:

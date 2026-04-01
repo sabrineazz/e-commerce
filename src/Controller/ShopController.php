@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 class ShopController extends AbstractController
 {
@@ -25,28 +25,10 @@ class ShopController extends AbstractController
     {
         return $this->render('shop/profile.html.twig');
     }
-
-    #[Route('/product/{id}', name: 'app_product_details')]
-    public function productDetails(int $id): Response
-    {
-        return $this->render('shop/product_details.html.twig');
-    }
-
-    #[Route('/categories', name: 'app_browse_categories')]
-    public function browseCategories(): Response
-    {
-        return $this->render('shop/browse_categories.html.twig');
-    }
-
     #[Route('/cart', name: 'app_cart')]
     public function cart(): Response
     {
         return $this->render('shop/cart.html.twig');
     }
 
-    #[Route('/category/{id}/products', name: 'app_products_by_category')]
-    public function productsByCategory(int $id): Response
-    {
-        return $this->render('shop/products_by_category.html.twig');
-    }
 }

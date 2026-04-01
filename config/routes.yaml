@@ -12,31 +12,3 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
-
-app_index:
-    path: /
-    controller: App\Controller\ShopController::index
-
-app_login:
-    path: /login
-    controller: App\Controller\ShopController::login
-
-app_profile:
-    path: /profile
-    controller: App\Controller\ShopController::profile
-
-app_product_details:
-    path: /product/{id}
-    controller: App\Controller\ShopController::productDetails
-
-app_browse_categories:
-    path: /categories
-    controller: App\Controller\ShopController::browseCategories
-
-app_cart:
-    path: /cart
-    controller: App\Controller\ShopController::cart
-
-app_products_by_category:
-    path: /category/{id}/products
-    controller: App\Controller\ShopController::productsByCategory
