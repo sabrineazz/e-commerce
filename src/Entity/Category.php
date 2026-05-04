@@ -30,6 +30,9 @@ class Category
     #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'categories')]
     private Collection $products;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -96,6 +99,18 @@ class Category
     public function removeProduct(Product $product): static
     {
         $this->products->removeElement($product);
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
 
         return $this;
     }
